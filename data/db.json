@@ -1,0 +1,28 @@
+{
+    "members": [
+        {
+            "id": 1,
+            "name": "Member 1",
+            "townhall": 10,
+            "xp": 110,
+            "trophies": 2000,
+            "role": "Elder"
+        },
+        {
+            "id": 2,
+            "name": "Member 2",
+            "townhall": 9,
+            "xp": 90,
+            "trophies": 1800,
+            "role": "Elder"
+        },
+        {
+            "id": 3,
+            "name": "Member 3",
+            "townhall": 11,
+            "xp": 150,
+            "trophies": 3000,
+            "role": "Leader"
+        }
+    ]
+}

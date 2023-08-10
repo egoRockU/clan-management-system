@@ -1,13 +1,142 @@
-body {
+@font-face {
+  font-family: MoonRegular;
+  src: url("Fonts/Moon2.0-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Ailerons;
+  src: url("Fonts/Ailerons-TrialVersion.otf") format("opentype");
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'MoonRegular';
+  color: rgb(212, 212, 212);
+}
+
+body {
+  background-color: #16191c;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navbar {
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+
+.navbar h1{
+  font-family: 'Ailerons';
+  font-size: 50px;
+}
+
+.navbar a{
+  font-size: 20px;
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  color: white;
+}
+
+.navbar h1:hover{
+  color: white;
+  cursor: default;
+}
+
+.navbar .links{
+  margin-left: auto;
+}
+
+.sorting {
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px 0 5px 0;
+}
+
+.sortButton {
+  padding: 2px 2px 2px 2px;
+  border: 1px solid (212, 212, 212);
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #16191c;
+}
+
+.sortImg{
+  height: 25px;
+  width: 24px;
+  filter: invert(100%);
+}
+
+.memberList{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.memberBar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid;
+  margin: 10px 0 10px 0;
+  border-radius: 10px;
+  padding: 10px 0 10px 0;
+}
+
+.memberBar:hover{
+  box-shadow: 0 0 10px 1px white;
+  cursor: pointer;
+}
+
+.memberBar p{
+  font-size: large;
+}
+
+.memberNum{
+  display: flex;
+  justify-content: center;
+  padding: 5px 0 5px 0;
+  width: 100px;
+}
+
+.memberNum h2{
+  font-family: 'Ailerons';
+}
+
+.memberTownhall{
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  padding: 5px 0 5px 0;
+}
+
+.memberName{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+  padding: 5px 0 5px 0;
+}
+
+.memberName small{
+  color:rgb(141, 141, 141)
+}
+
+.memberTrophies{
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  padding: 5px 0 5px 0;
 }
