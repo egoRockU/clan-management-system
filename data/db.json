@@ -1,28 +1,40 @@
 {
-    "members": [
-        {
-            "id": 1,
-            "name": "Member 1",
-            "townhall": 10,
-            "xp": 110,
-            "trophies": 2000,
-            "role": "Elder"
-        },
-        {
-            "id": 2,
-            "name": "Member 2",
-            "townhall": 9,
-            "xp": 90,
-            "trophies": 1800,
-            "role": "Elder"
-        },
-        {
-            "id": 3,
-            "name": "Member 3",
-            "townhall": 11,
-            "xp": 150,
-            "trophies": 3000,
-            "role": "Leader"
-        }
-    ]
+  "members": [
+    {
+      "id": 1,
+      "name": "Member 1",
+      "townhall": 10,
+      "xp": 110,
+      "trophies": 2000,
+      "league": "Crystal",
+      "role": "Elder"
+    },
+    {
+      "id": 2,
+      "name": "Member 2",
+      "townhall": 9,
+      "xp": 90,
+      "trophies": 1800,
+      "league": "Gold",
+      "role": "Elder"
+    },
+    {
+      "id": 3,
+      "name": "Member 3",
+      "townhall": 11,
+      "xp": 150,
+      "trophies": 3000,
+      "league": "Master",
+      "role": "Leader"
+    },
+    {
+      "name": "You",
+      "townhall": "5",
+      "xp": "40",
+      "trophies": "1000",
+      "league": "Silver",
+      "role": "Elder",
+      "id": 4
+    }
+  ]
 }

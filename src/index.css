@@ -115,9 +115,16 @@ code {
   font-family: 'Ailerons';
 }
 
+.memberLeague {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  padding: 5px 0 5px 0;
+}
+
 .memberTownhall{
   display: flex;
-  width: 200px;
+  width: 100px;
   justify-content: center;
   padding: 5px 0 5px 0;
 }
@@ -137,6 +144,58 @@ code {
 .memberTrophies{
   display: flex;
   width: 100px;
-  justify-content: center;
+  justify-content: space-around;
   padding: 5px 0 5px 0;
+  margin-right: 5px;
+}
+
+.memberTrophies img{
+  max-width: 20px;
+  margin-right: 5px;
+  align-items: left;
+  filter: invert(80%)
+}
+
+.Add{
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Add label {
+  text-align: left;
+  display: block;
+  font-size: larger;
+}
+
+.Add h2 {
+  margin-bottom: 30px;
+}
+
+.Add input, .Add select{
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  display: block;
+  background-color: #16191c;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  font-size: large;
+}
+
+.Add button {
+  background: #16191c;
+  color: rgb(212, 212, 212);
+  border: 1px solid;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.Add button:hover {
+  background: rgb(212, 212, 212);
+  color:  #16191c;
 }
