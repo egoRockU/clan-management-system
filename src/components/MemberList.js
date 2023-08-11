@@ -1,9 +1,29 @@
 import trophyImg from "../assets/Trophy.png";
+import { TownhallImages, LeagueImages } from "../assets";
 
 const MemberList = ({members}) => {
 
+    const LeagueImageMapping = {
+        "Unranked": LeagueImages[0],
+        "Bronze": LeagueImages[1],
+        "Silver": LeagueImages[2],
+        "Gold": LeagueImages[3],
+        "Crystal": LeagueImages[4],
+        "Master": LeagueImages[5],
+        "Champion": LeagueImages[6],
+        "Titan": LeagueImages[7],
+        "Legend": LeagueImages[8],
+    }
 
-    
+    const mapLeague = (member) => {
+        const leagueImg = LeagueImageMapping[member.league]
+            if (leagueImg){
+                return <img src={leagueImg} alt=""></img>
+            }
+            else{
+                <p>{member.league}</p>
+            }
+    }
 
     return ( 
         <div className="memberList">
@@ -13,10 +33,15 @@ const MemberList = ({members}) => {
                     <h2>{index + 1}</h2>
                 </div>
                 <div className="memberLeague">
-                    <p>{member.league}</p>
+                    { mapLeague(member) }
                 </div>
                 <div className="memberTownhall">
-                    <p> Townhall level: {member.townhall}</p>
+                    { TownhallImages.map((th, i) => {
+                        i+=1;
+                        if (i == member.townhall){
+                            return (<img src={th} alt=""></img>)
+                        }
+                    }) }
                 </div>
                 <div className="memberName">
                     <p>{member.name}</p>

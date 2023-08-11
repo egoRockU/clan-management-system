@@ -122,11 +122,19 @@ code {
   padding: 5px 0 5px 0;
 }
 
+.memberLeague img{
+  width: 50px;
+}
+
 .memberTownhall{
   display: flex;
   width: 100px;
   justify-content: center;
   padding: 5px 0 5px 0;
+}
+
+.memberTownhall img{
+  width: 50px;
 }
 
 .memberName{
