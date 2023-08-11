@@ -38,8 +38,11 @@ const MemberList = ({members}) => {
                 <div className="memberTownhall">
                     { TownhallImages.map((th, i) => {
                         i+=1;
-                        if (i == member.townhall){
+                        if (i === member.townhall){
                             return (<img src={th} alt=""></img>)
+                        }
+                        else {
+                            return null;
                         }
                     }) }
                 </div>

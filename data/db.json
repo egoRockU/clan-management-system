@@ -29,11 +29,11 @@
     },
     {
       "name": "You",
-      "townhall": "5",
-      "xp": "40",
-      "trophies": "1000",
-      "league": "Silver",
-      "role": "Elder",
+      "townhall": 4,
+      "xp": 35,
+      "trophies": 750,
+      "league": "Bronze",
+      "role": "Member",
       "id": 4
     }
   ]

@@ -85,7 +85,7 @@ const Add = () => {
                 />
                 <label>Townhall Level</label>
                 <select value={townhall} 
-                        onChange={e=>setTownhall(e.target.value)}>
+                        onChange={e=>setTownhall(parseInt(e.target.value))}>
                     { lvlOption }
                 </select>
                 <label>XP Level</label>
@@ -94,7 +94,7 @@ const Add = () => {
                     required
                     value={xp}
                     min="1"
-                    onChange={e=>setXp(e.target.value)}
+                    onChange={e=>setXp(parseInt(e.target.value))}
                 />
                 <label>Trophies</label>
                 <input
@@ -103,7 +103,7 @@ const Add = () => {
                     value={trophies}
                     min="0"
                     onChange={e=>{
-                        setTrophies(e.target.value);
+                        setTrophies(parseInt(e.target.value));
                         calculateLeague(e.target.value);
                     }}
                 />
