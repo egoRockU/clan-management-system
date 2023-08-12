@@ -85,7 +85,7 @@ code {
   margin: 0 auto;
 }
 
-.memberBar{
+.memberBar a{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -95,9 +95,13 @@ code {
   padding: 10px 0 10px 0;
 }
 
-.memberBar:hover{
+.memberBar a:hover{
   box-shadow: 0 0 10px 1px white;
   cursor: pointer;
+}
+
+.memberBar a{
+  text-decoration: none;
 }
 
 .memberBar p{
@@ -206,4 +210,132 @@ code {
 .Add button:hover {
   background: rgb(212, 212, 212);
   color:  #16191c;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+}
+
+.l-side{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:20px;
+}
+
+.l-side select{
+  width: 150px;
+}
+
+.r-side{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding:20px
+}
+
+.profile-th-img{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-th-img img{
+  width: 150px;
+  margin-top: 10px;
+}
+
+.container input, .container select{
+  padding: 10px 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  display: block;
+  background-color: #16191c;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  font-size: large;
+}
+
+.xp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xp input{
+  width: 400px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.league {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.league img{
+  height: 75px;
+  width: auto;
+}
+
+.league input{
+  height: 50px;
+  width: 300px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.role {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.role select{
+  width: 400px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.update-buttons{
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.update-buttons button{
+  background: #16191c;
+  color: rgb(212, 212, 212);
+  border: 1px solid;
+  padding: 10px;
+  margin:10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: large;
+}
+
+#btn-Update:hover{
+  background: rgb(212, 212, 212);
+  color:  #16191c;
+}
+
+#btn-Delete:hover{
+  background: rgb(206, 61, 61);
+  color:  rgb(212, 212, 212);
 }

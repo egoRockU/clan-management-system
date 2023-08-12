@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { calculateLeague } from "./utils/calculateLeague";
 
 const Add = () => {
 
@@ -10,7 +11,7 @@ const Add = () => {
 
     //states to be submitted
     const [name, setName] = useState("You");
-    const [townhall, setTownhall] = useState("Level 1");
+    const [townhall, setTownhall] = useState(1);
     const [xp, setXp] = useState(1);
     const [trophies, setTrophies] = useState(0);
     const [role, setRole] = useState("Member");
@@ -20,36 +21,6 @@ const Add = () => {
 
     for(let i=1; i<= highestTHlvl; i++ ){
         lvlOption.push(<option value={"Level " && i}>Level {i}</option>)
-    }
-
-    const calculateLeague = (trophies) => {
-        if (trophies < 400){
-            setLeague("Unranked");
-        }
-        if (trophies >= 400){
-            setLeague("Bronze");
-        }
-        if (trophies >= 800){
-            setLeague("Silver");
-        }
-        if (trophies >= 1400){
-            setLeague("Gold");
-        }
-        if (trophies >= 2000){
-            setLeague("Crystal");
-        }
-        if (trophies >= 2600){
-            setLeague("Master");
-        }
-        if (trophies >= 3200){
-            setLeague("Champion");
-        }
-        if (trophies >= 4100){
-            setLeague("Titan");
-        }
-        if (trophies >= 5000){
-            setLeague("Legend");
-        }
     }
     
     const submit = (e) => {
@@ -104,7 +75,7 @@ const Add = () => {
                     min="0"
                     onChange={e=>{
                         setTrophies(parseInt(e.target.value));
-                        calculateLeague(e.target.value);
+                        setLeague(calculateLeague(e.target.value));
                     }}
                 />
                 <label>Role</label>

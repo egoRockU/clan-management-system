@@ -10,31 +10,22 @@
       "role": "Elder"
     },
     {
-      "id": 2,
       "name": "Member 2",
       "townhall": 9,
-      "xp": 90,
-      "trophies": 1800,
-      "league": "Gold",
-      "role": "Elder"
+      "xp": 91,
+      "trophies": 2029,
+      "league": "Crystal",
+      "role": "Co-leader",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Member 3",
       "townhall": 11,
       "xp": 150,
       "trophies": 3000,
       "league": "Master",
-      "role": "Leader"
-    },
-    {
-      "name": "You",
-      "townhall": 4,
-      "xp": 35,
-      "trophies": 750,
-      "league": "Bronze",
-      "role": "Member",
-      "id": 4
+      "role": "Leader",
+      "id": 3
     }
   ]
 }
