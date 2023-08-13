@@ -65,6 +65,22 @@ code {
   padding: 5px 0 5px 0;
 }
 
+.memCount{
+  width: 350px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort-btn{
+  width: 100px;
+}
+
+.sort-lbl{
+  width: 350px;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .sortButton {
   padding: 2px 2px 2px 2px;
   border: 1px solid (212, 212, 212);
@@ -93,6 +109,7 @@ code {
   margin: 10px 0 10px 0;
   border-radius: 10px;
   padding: 10px 0 10px 0;
+  height: 70px;
 }
 
 .memberBar a:hover{

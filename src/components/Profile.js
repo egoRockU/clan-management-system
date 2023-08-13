@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const Profile = () => {
     const { id } = useParams();
     const {data:member, loading, error} = useFetch('http://localhost:8000/members/' + id);
-    const [isLoading, setisLoading] = useState(false);
+    //const [isLoading, setisLoading] = useState(false);
     const highestTHlvl = 15;
     const lvlOption = [];
     const history = useHistory();
@@ -50,7 +50,7 @@ const Profile = () => {
 
     const updateHandler = (e) => {
         e.preventDefault();
-        setisLoading(true);
+        //setisLoading(true);
 
         const member = {name, townhall, xp, trophies, league, role};
 
@@ -60,7 +60,7 @@ const Profile = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(member)
         }).then(()=>{
-            setisLoading(false);
+            //setisLoading(false);
             history.push('/');
         });
     }

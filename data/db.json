@@ -1,31 +1,40 @@
 {
   "members": [
     {
-      "id": 1,
       "name": "Member 1",
       "townhall": 10,
       "xp": 110,
-      "trophies": 2000,
-      "league": "Crystal",
-      "role": "Elder"
+      "trophies": 3700,
+      "league": "Champion",
+      "role": "Elder",
+      "id": 1
     },
     {
       "name": "Member 2",
-      "townhall": 9,
-      "xp": 91,
-      "trophies": 2029,
-      "league": "Crystal",
-      "role": "Co-leader",
+      "townhall": 12,
+      "xp": 160,
+      "trophies": 1800,
+      "league": "Gold",
+      "role": "Member",
       "id": 2
     },
     {
       "name": "Member 3",
-      "townhall": 11,
+      "townhall": 3,
       "xp": 150,
-      "trophies": 3000,
-      "league": "Master",
+      "trophies": 5100,
+      "league": "Legend",
       "role": "Leader",
       "id": 3
+    },
+    {
+      "name": "AdrianPogi",
+      "townhall": 10,
+      "xp": 69,
+      "trophies": 3000,
+      "league": "Master",
+      "role": "Co-leader",
+      "id": 4
     }
   ]
 }

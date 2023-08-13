@@ -2,7 +2,7 @@ import trophyImg from "../assets/Trophy.png";
 import { getLeague, getTownhall } from "./utils/getImages";
 import { Link } from "react-router-dom";
 
-const MemberList = ({members}) => {
+const MemberList = ({members, isSortedByXp}) => {
 
     return ( 
         <div className="memberList">
@@ -17,8 +17,9 @@ const MemberList = ({members}) => {
                         { !getLeague(member.league) && <p>{ member.league }</p> }
                     </div>
                     <div className="memberTownhall">
-                        { getTownhall(member.townhall) && <img src={getTownhall(member.townhall)} alt=""></img> }
-                        { !getTownhall(member.townhall) && <p>Townhall Level: {member.townhall}</p> }
+                        { !isSortedByXp && getTownhall(member.townhall) && <img src={getTownhall(member.townhall)} alt=""></img> }
+                        { !isSortedByXp && !getTownhall(member.townhall) && <p>Townhall Level: {member.townhall}</p> }
+                        { isSortedByXp && <p>XP Level: {member.xp}</p> }
                     </div>
                     <div className="memberName">
                         <p>{member.name}</p>
