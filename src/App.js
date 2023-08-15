@@ -12,14 +12,14 @@ function App() {
         <Navbar />
         <div className="content">
           <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
             <Route path='/create'>
               <Add />
             </Route>
             <Route path='/profile/:id'>
               <Profile />
-            </Route>
-            <Route exact path='/'>
-              <Home />
             </Route>
           </Switch>
         </div>
