@@ -30,7 +30,7 @@ const Add = () => {
 
         const member = {name, townhall, xp, trophies, league, role};
 
-        fetch('http://localhost:8000/members',
+        fetch('https://egorocku.github.io/cms-api/members.json',
         {
             method: 'POST',
             headers: { "Content-Type": "application/json" },

@@ -4,10 +4,12 @@ import { getLeague, getTownhall } from "./utils/getImages";
 import { useState, useEffect } from "react";
 import { calculateLeague } from "./utils/calculateLeague";
 import { useHistory } from "react-router-dom";
+import GetData from "./utils/firebase-utils/getData";
 
 const Profile = () => {
     const { id } = useParams();
-    const {data:member, loading, error} = useFetch('http://localhost:8000/members/' + id);
+    const url = 'https://egorocku.github.io/cms-api/members.json/'
+    const {data:member, loading, error} = GetData(id-1);
     //const [isLoading, setisLoading] = useState(false);
     const highestTHlvl = 15;
     const lvlOption = [];
@@ -54,7 +56,7 @@ const Profile = () => {
 
         const member = {name, townhall, xp, trophies, league, role};
 
-        fetch('http://localhost:8000/members/' + id,
+        fetch(url + id,
         {
             method: 'PUT',
             headers: { "Content-Type": "application/json" },
@@ -68,7 +70,7 @@ const Profile = () => {
     const deleteHandler = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:8000/members/' + id, {
+        fetch(url + id, {
             method: 'DELETE'
         }).then(()=>{
             history.push('/');

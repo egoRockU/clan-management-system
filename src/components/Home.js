@@ -3,6 +3,7 @@ import sortImg from "../assets/up-down-arrow.svg"
 import MemberList from "./MemberList";
 import useFetch from "./useFetch";
 import { sortByTrophies, sortByTownhall, sortByRole, sortByXp } from "./utils/sortFunctions";
+import GetData from "./utils/firebase-utils/getData";
 
 const Home = () => {
 
@@ -12,8 +13,9 @@ const Home = () => {
     const [sortFunc, setSortFunc] = useState(()=>sortByTrophies);
     const [isSortedByXp, setIsSortedByXp] = useState(false);
 
-    const {data: members, dataCount: memCount, loading, error} = useFetch('http://localhost:8000/members');
-
+    //const {data: members, dataCount: memCount, loading, error} = useFetch('https://egorocku.github.io/cms-api/members.json');
+    const {data: members, dataCount: memCount, loading, error} = GetData('');
+    
     const switchCateg = () => {
         if (sortInd < sortCateg.length-1){
             setSortInd(sortInd+1);
