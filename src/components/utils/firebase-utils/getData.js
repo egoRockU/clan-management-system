@@ -12,14 +12,22 @@ const GetData = ( id ) => {
     useEffect(()=> {
         const FetchData = async () => {
             try {
-                const membersRef = await ref(database, 'members/' + id);
+                const membersRef = await ref(database, `members/${id}`);
                 const members = await get(membersRef);
                 if(!members.exists()){
-                    throw new Error("Failed to Fetch Data");
+                    throw new Error("Database is Empty. If you want to add members, you can click the 'Add Member' on the Navbar.")
                 }
-                const mem = members.val()
-                setdata(mem);
-                setDataCount(mem.length);
+                const memdata = members.val();
+                let memList = null
+
+                if(id === ''){
+                    memList = Object.values(memdata);
+                } else {
+                    memList = memdata;
+                }
+
+                setdata(memList);
+                setDataCount(memList.length);
                 setLoading(false);
             } catch (e){
                 setError(e.message);
@@ -27,7 +35,7 @@ const GetData = ( id ) => {
             }
         }
         FetchData();
-    }, []);
+    }, [id]);
 
     return { data, dataCount, loading, error };
 }

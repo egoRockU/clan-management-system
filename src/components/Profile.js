@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
 import { getLeague, getTownhall } from "./utils/getImages";
 import { useState, useEffect } from "react";
 import { calculateLeague } from "./utils/calculateLeague";
 import { useHistory } from "react-router-dom";
 import GetData from "./utils/firebase-utils/getData";
+import { database } from "./utils/firebase-utils/firebaseSetups";
+import { update, ref, remove } from "firebase/database";
 
 const Profile = () => {
     const { id } = useParams();
-    const url = 'https://egorocku.github.io/cms-api/members.json/'
-    const {data:member, loading, error} = GetData(id-1);
-    //const [isLoading, setisLoading] = useState(false);
+    const {data:member, loading, error} = GetData(id);
+    const memberRef = ref(database, 'members/' + id);
+    const [isLoadingUpdate, setisLoadingUpdate] = useState(false);
+    const [isLoadingDelete, setisLoadingDelete] = useState(false);
     const highestTHlvl = 15;
     const lvlOption = [];
     const history = useHistory();
@@ -18,11 +20,11 @@ const Profile = () => {
     //states to be updated
     const [name, setName] = useState("");
     const [townhall, setTownhall] = useState("Level 1");
-    const [TownhallImage, setTownhallImage] = useState(null);
+    const [TownhallImage, setTownhallImage] = useState("");
     const [xp, setXp] = useState(1);
-    const [trophies, setTrophies] = useState(null);
-    const [LeagueImage, setLeagueImage] = useState(null);
-    const [role, setRole] = useState(null);
+    const [trophies, setTrophies] = useState(0);
+    const [LeagueImage, setLeagueImage] = useState("");
+    const [role, setRole] = useState("");
     const [league, setLeague] = useState("Unranked");
 
     useEffect(()=>{
@@ -30,7 +32,7 @@ const Profile = () => {
             setName(member.name)
             setTownhall(member.townhall);
             setTownhallImage(getTownhall(member.townhall));
-            setXp(member.xp);
+            setXp(member.xp);      
             setTrophies(member.trophies);
             setLeague(member.league);
             setLeagueImage(getLeague(member.league));
@@ -46,35 +48,46 @@ const Profile = () => {
 
     //for options in townhall select
     for(let i=1; i<= highestTHlvl; i++ ){
-        lvlOption.push(<option value={"Level " && i}>Level {i}</option>)
+        lvlOption.push(<option key={"Level " + i} value={"Level " && i}>Level {i}</option>)
     }
 
 
     const updateHandler = (e) => {
         e.preventDefault();
-        //setisLoading(true);
-
-        const member = {name, townhall, xp, trophies, league, role};
-
-        fetch(url + id,
-        {
-            method: 'PUT',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(member)
-        }).then(()=>{
-            //setisLoading(false);
-            history.push('/');
-        });
+        setisLoadingUpdate(true);
+        const updateData = async() => {
+            await update(memberRef, {
+                name: name,
+                townhall: townhall,
+                xp: xp,
+                trophies: trophies,
+                league: league,
+                role: role,
+            });
+        };
+        updateData();
+        setisLoadingUpdate(false);
+        history.push('/')
     }
 
     const deleteHandler = (e) => {
         e.preventDefault();
+        setisLoadingDelete(true);
+        const deleteData = async() => {
+            await remove(memberRef);
+        }
 
-        fetch(url + id, {
-            method: 'DELETE'
-        }).then(()=>{
-            history.push('/');
-        })
+        deleteData();
+        setisLoadingDelete(false)
+        history.push('/');
+    }
+
+    const parse = (value) => {
+        if(value){
+            return parseInt(value);
+        } else {
+            return "";
+        }
     }
 
     return ( 
@@ -108,7 +121,7 @@ const Profile = () => {
                                     required
                                     value={xp}
                                     min="1"
-                                    onChange={e=>setXp(parseInt(e.target.value))}
+                                    onChange={e=>setXp(parse(e.target.value))}
                                 />
                             </div>
                             <div className="league">
@@ -120,7 +133,7 @@ const Profile = () => {
                                     value={trophies}
                                     min="0"
                                     onChange={e=>{
-                                        setTrophies(parseInt(e.target.value));
+                                        setTrophies(parse(e.target.value));
                                     }}
                                 />
                             </div>
@@ -138,8 +151,11 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className="update-buttons">
-                        <button onClick={updateHandler} id="btn-Update">Update</button>
-                        <button onClick={deleteHandler} id="btn-Delete">Kick out</button>
+                        { !isLoadingUpdate && <button onClick={updateHandler} id="btn-Update">Update</button> }
+                        { isLoadingUpdate && <button disabled id="btn-Update">Updating...</button> }
+                        { !isLoadingDelete && <button onClick={deleteHandler} id="btn-Delete">Kick out</button> }
+                        { isLoadingDelete && <button delete id="btn-Delete">Kicking out..</button> }
+                        
                     </div>
                 </form>
             )}

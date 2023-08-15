@@ -8,7 +8,7 @@ const MemberList = ({members, isSortedByXp}) => {
         <div className="memberList">
             {members.map((member, index)=>(
             <div className="memberBar" key={member.id}>
-                <Link to={`/profile/${member.id}`}>
+                <Link to={`/profile/${member.fid}`}>
                     <div className="memberNum">
                         <h2>{index + 1}</h2>
                     </div>
