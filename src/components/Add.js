@@ -55,7 +55,13 @@ const Add = () => {
         AddData();
     }
 
-
+    const parse = (value) => {
+        if(value){
+            return parseInt(value);
+        } else {
+            return "";
+        }
+    }
 
     return ( 
         <div className="Add">
@@ -79,7 +85,7 @@ const Add = () => {
                     required
                     value={xp}
                     min="1"
-                    onChange={e=>setXp(parseInt(e.target.value))}
+                    onChange={e=>setXp(parse(e.target.value))}
                 />
                 <label>Trophies</label>
                 <input
@@ -88,7 +94,7 @@ const Add = () => {
                     value={trophies}
                     min="0"
                     onChange={e=>{
-                        setTrophies(parseInt(e.target.value));
+                        setTrophies(parse(e.target.value));
                         setLeague(calculateLeague(e.target.value));
                     }}
                 />
