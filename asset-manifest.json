@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/clan-management-system/static/css/main.4900dcd3.css",
-    "main.js": "/clan-management-system/static/js/main.ba828876.js",
+    "main.js": "/clan-management-system/static/js/main.0ed386fe.js",
     "static/js/787.93104e55.chunk.js": "/clan-management-system/static/js/787.93104e55.chunk.js",
     "static/media/15.png": "/clan-management-system/static/media/15.29babdf017338295d6a7.png",
     "static/media/11.png": "/clan-management-system/static/media/11.4137042bacbd1eaa9d2b.png",
@@ -24,11 +24,11 @@
     "static/media/up-down-arrow.svg": "/clan-management-system/static/media/up-down-arrow.0b09714d628b269b753efe961f144d3f.svg",
     "index.html": "/clan-management-system/index.html",
     "main.4900dcd3.css.map": "/clan-management-system/static/css/main.4900dcd3.css.map",
-    "main.ba828876.js.map": "/clan-management-system/static/js/main.ba828876.js.map",
+    "main.0ed386fe.js.map": "/clan-management-system/static/js/main.0ed386fe.js.map",
     "787.93104e55.chunk.js.map": "/clan-management-system/static/js/787.93104e55.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4900dcd3.css",
-    "static/js/main.ba828876.js"
+    "static/js/main.0ed386fe.js"
   ]
 }
